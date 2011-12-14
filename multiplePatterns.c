@@ -15,12 +15,12 @@ main()
 		{
 			P1OUT^=0x01;
 			delay();
-			delay();
 			P1OUT^=0x40;
 		}
 		while((P1IN & 0x08)!=0)
 		{
 			P1OUT^=0x41;
+			delay();
 			delay();
 			delay();
 			P1OUT^=0x00;

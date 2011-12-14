@@ -2,9 +2,8 @@
 main()
 {
 	P1DIR=0x41;
-	while(1)
-		if((P1IN & 0x08) == 0x00)
+	while((P1IN>>3) &1);
+		while(!(P1IN>>3)&1)
 			P1OUT=0x01;
-		else
-			P1OUT=0x40;
+	P1OUT=0x40;
 }
