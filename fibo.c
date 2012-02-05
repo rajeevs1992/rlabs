@@ -1,8 +1,7 @@
 #include<msp430.h>
 main()
 {
-	P1DIR=0x41;
-	P1OUT=0x40;
+	P1DIR=0x40;
 	int lfsr = 0xace1;
 	unsigned bit;
 	TACTL=TASSEL_2|ID_0|MC_2|TAIFG;
@@ -12,7 +11,7 @@ main()
 	   lfsr =  (lfsr << 1)|bit;
 	   if((lfsr>>6) & 0x01)
 	   {
-		P1OUT^=0x41;
+		P1OUT^=0x40;
 		while(!(TACTL&0x01));
 		TACTL=TACTL & ~0x1;
 		while(!(TACTL&0x01));
