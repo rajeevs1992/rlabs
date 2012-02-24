@@ -1,5 +1,5 @@
 #include<msp430.h>
-#define MAX 1000
+#define MAX 400
 void delay(int i)
 {
 	while(i--);
